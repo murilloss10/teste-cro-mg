@@ -23,59 +23,91 @@ class ProfileController extends Controller
         $user_id = Auth::id();
         $registry = Profile::where('user_id', $user_id)->first();
 
-        if($request->input('cpf') == $registry->cpf && $request->input('rg') != $registry->rg){
-            
+        if($registry == null){
+
             $rules = [
-                'titration' => 'required',
-                'cpf' => 'required',
-                'rg' => 'required|unique:profiles',
+                'titration' => 'required|min:15',
+                'cpf' => 'required|min:14|unique:profiles',
+                'rg' => 'required|min:10|unique:profiles',
             ];
             $messages = [
                 'required' => 'Campo obrigatório',
-            ];
-            $request->validate($rules, $messages);
-
-        }
-        else if($request->input('rg') == $registry->rg && $request->input('cpf') != $registry->cpf){
-
-            $rules = [
-                'titration' => 'required',
-                'cpf' => 'required|unique:profiles',
-                'rg' => 'required',
-            ];
-            $messages = [
-                'required' => 'Campo obrigatório',
-            ];
-            $request->validate($rules, $messages);
-
-        }
-        else if($request->input('cpf') == $registry->cpf && $request->input('rg') == $registry->rg){
-
-            $rules = [
-                'titration' => 'required',
-                'cpf' => 'required',
-                'rg' => 'required',
-            ];
-            $messages = [
-                'required' => 'Campo obrigatório',
+                'titration.min' => 'Digite um Título válido',
+                'cpf.min' => 'Digite um CPF válido',
+                'rg.min' => 'Digite um RG válido'
             ];
             $request->validate($rules, $messages);
 
         }
         else {
 
-            $rules = [
-                'titration' => 'required',
-                'cpf' => 'required|unique:profiles',
-                'rg' => 'required|unique:profiles',
-            ];
-            $messages = [
-                'required' => 'Campo obrigatório',
-            ];
-            $request->validate($rules, $messages);
+            if($request->input('cpf') == $registry->cpf && $request->input('rg') != $registry->rg){
+            
+                $rules = [
+                    'titration' => 'required|min:15',
+                    'cpf' => 'required|min:14',
+                    'rg' => 'required|min:10|unique:profiles',
+                ];
+                $messages = [
+                    'required' => 'Campo obrigatório',
+                    'titration.min' => 'Digite um Título válido',
+                    'cpf.min' => 'Digite um CPF válido',
+                    'rg.min' => 'Digite um RG válido'
+                ];
+                $request->validate($rules, $messages);
+    
+            }
+            else if($request->input('rg') == $registry->rg && $request->input('cpf') != $registry->cpf){
+    
+                $rules = [
+                    'titration' => 'required|min:15',
+                    'cpf' => 'required|min:14|unique:profiles',
+                    'rg' => 'required|min:10',
+                ];
+                $messages = [
+                    'required' => 'Campo obrigatório',
+                    'titration.min' => 'Digite um Título válido',
+                    'cpf.min' => 'Digite um CPF válido',
+                    'rg.min' => 'Digite um RG válido'
+                ];
+                $request->validate($rules, $messages);
+    
+            }
+            else if($request->input('cpf') == $registry->cpf && $request->input('rg') == $registry->rg){
+    
+                $rules = [
+                    'titration' => 'required|min:15',
+                    'cpf' => 'required|min:14',
+                    'rg' => 'required|min:10',
+                ];
+                $messages = [
+                    'required' => 'Campo obrigatório',
+                    'titration.min' => 'Digite um Título válido',
+                    'cpf.min' => 'Digite um CPF válido',
+                    'rg.min' => 'Digite um RG válido'
+                ];
+                $request->validate($rules, $messages);
+    
+            }
+            else {
+
+                $rules = [
+                    'titration' => 'required|min:15',
+                    'cpf' => 'required|min:14|unique:profiles',
+                    'rg' => 'required|min:10|unique:profiles',
+                ];
+                $messages = [
+                    'required' => 'Campo obrigatório',
+                    'titration.min' => 'Digite um Título válido',
+                    'cpf.min' => 'Digite um CPF válido',
+                    'rg.min' => 'Digite um RG válido'
+                ];
+                $request->validate($rules, $messages);
+    
+            }
 
         }
-
+        
 
         Profile::updateOrCreate(
             [

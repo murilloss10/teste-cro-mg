@@ -35,12 +35,17 @@ class FilmController extends Controller
         $user_id = Auth::id();
 
         $rules = [
-            'title' => 'required',
-            'release_year' => 'required',
-            'director' => 'required',
+            'title' => 'required|min:2|max:36',
+            'release_year' => 'required|min:4',
+            'director' => 'required|min:2|max:36'
         ];
         $messages = [
             'required' => 'Campo obrigatório',
+            'title.min' => 'Digite um nome com ao menos 2 caracteres',
+            'title.max' => 'Digite um nome com no máximo 36 caracteres',
+            'release_year.min' => 'Digite o ano completo',
+            'director.min' => 'Digite um nome com ao menos 2 caracteres',
+            'director.max' => 'Digite um nome com no máximo 36 caracteres',
         ];
         $request->validate($rules, $messages);
 
@@ -82,12 +87,17 @@ class FilmController extends Controller
     {
 
         $rules = [
-            'title' => 'required',
+            'title' => 'required|min:2|max:36',
             'release_year' => 'required',
-            'director' => 'required',
+            'director' => 'required|min:2|max:36'
         ];
         $messages = [
             'required' => 'Campo obrigatório',
+            'title.min' => 'Digite um nome com ao menos 2 caracteres',
+            'title.max' => 'Digite um nome com no máximo 36 caracteres',
+            'release_year.min' => 'Digite o ano completo',
+            'director.min' => 'Digite um nome com ao menos 2 caracteres',
+            'director.max' => 'Digite um nome com no máximo 36 caracteres',
         ];
         $request->validate($rules, $messages);
 

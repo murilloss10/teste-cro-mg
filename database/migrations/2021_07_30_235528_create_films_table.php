@@ -23,6 +23,7 @@ class CreateFilmsTable extends Migration
             $table->string('title', 36);
             $table->integer('release_year');
             $table->string('director', 36);
+            $table->string('image_film', 255);
             $table->timestamps();
         });
     }

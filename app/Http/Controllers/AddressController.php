@@ -36,13 +36,20 @@ class AddressController extends Controller
         $user_id = Auth::id();
 
         $rules = [
-            'street' => 'required',
+            'street' => 'required|min:3|max:36',
             'number' => 'required',
-            'district' => 'required',
-            'zip_code' => 'required',
+            'district' => 'required|min:3|max:36',
+            'zip_code' => 'required|min:9',
+            'complement' => 'max:50'
         ];
         $messages = [
             'required' => 'Campo obrigatório',
+            'street.min' => 'Digite uma rua com ao menos 3 caracteres',
+            'street.max' => 'Digite uma rua com no máximo 36 caracteres',
+            'district.min' => 'Digite uma rua com ao menos 3 caracteres',
+            'district.max' => 'Digite uma rua com no máximo 36 caracteres',
+            'zip_code.min' => 'Digite um CEP  válido',
+            'complement.max' => 'Digite um complemento com no máximo 50 caracteres',
         ];
         $request->validate($rules, $messages);
 
@@ -88,13 +95,20 @@ class AddressController extends Controller
         $user_id = Auth::id();
 
         $rules = [
-            'street' => 'required',
+            'street' => 'required|min:3|max:36',
             'number' => 'required',
-            'district' => 'required',
-            'zip_code' => 'required',
+            'district' => 'required|min:3|max:36',
+            'zip_code' => 'required|min:9',
+            'complement' => 'max:50'
         ];
         $messages = [
             'required' => 'Campo obrigatório',
+            'street.min' => 'Digite uma rua com ao menos 3 caracteres',
+            'street.max' => 'Digite uma rua com no máximo 36 caracteres',
+            'district.min' => 'Digite uma rua com ao menos 3 caracteres',
+            'district.max' => 'Digite uma rua com no máximo 36 caracteres',
+            'zip_code.min' => 'Digite um CEP  válido',
+            'complement.max' => 'Digite um complemento com no máximo 50 caracteres',
         ];
         $request->validate($rules, $messages);
 
