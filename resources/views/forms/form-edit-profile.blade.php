@@ -20,18 +20,27 @@
         <label for="titration" class="col-sm-2 col-form-label">Titulação</label>
         <div class="col-sm-10">
             <input type="text" class="form-control" id="titration" name="titration" value="{{$data->titration}}">
+            @error('titration')
+                <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
         </div>
     </div>
     <div class="mb-3 row">
         <label for="cpf" class="col-sm-2 col-form-label">CPF</label>
         <div class="col-sm-10">
             <input type="text" class="form-control" id="cpf" name="cpf" value="{{$data->cpf}}">
+            @error('cpf')
+                <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
         </div>
     </div>
     <div class="mb-3 row">
         <label for="rg" class="col-sm-2 col-form-label">RG</label>
         <div class="col-sm-10">
             <input type="text" class="form-control" id="rg" name="rg" value="{{$data->rg}}">
+            @error('rg')
+                <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
         </div>
     </div>
     <button type="submit" class="btn btn-primary">Salvar</button>

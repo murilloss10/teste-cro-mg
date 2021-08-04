@@ -11,10 +11,10 @@
                 <div class="p-6 bg-white border-b border-gray-200">
 
                     @if (count($dataProfiles) == 0)
-                        @include('forms.form-create-personal-data')
+                        @include('forms.form-create-profile')
                     @else
                         @forelse ($dataProfiles as $data)
-                            @include('forms.form-edit-personal-data')
+                            @include('forms.form-edit-profile')
                         @empty
                         @endforelse
 
