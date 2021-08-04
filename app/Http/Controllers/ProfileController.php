@@ -21,20 +21,65 @@ class ProfileController extends Controller
     {
 
         $user_id = Auth::id();
+        $registry = Profile::where('user_id', $user_id)->first();
 
-        $rules = [
-            'titration' => 'required',
-            'cpf' => 'required',
-            'rg' => 'required',
-        ];
-        $messages = [
-            'required' => 'Campo obrigatório',
-        ];
-        $request->validate($rules, $messages);
+        if($request->input('cpf') == $registry->cpf && $request->input('rg') != $registry->rg){
+            
+            $rules = [
+                'titration' => 'required',
+                'cpf' => 'required',
+                'rg' => 'required|unique:profiles',
+            ];
+            $messages = [
+                'required' => 'Campo obrigatório',
+            ];
+            $request->validate($rules, $messages);
+
+        }
+        else if($request->input('rg') == $registry->rg && $request->input('cpf') != $registry->cpf){
+
+            $rules = [
+                'titration' => 'required',
+                'cpf' => 'required|unique:profiles',
+                'rg' => 'required',
+            ];
+            $messages = [
+                'required' => 'Campo obrigatório',
+            ];
+            $request->validate($rules, $messages);
+
+        }
+        else if($request->input('cpf') == $registry->cpf && $request->input('rg') == $registry->rg){
+
+            $rules = [
+                'titration' => 'required',
+                'cpf' => 'required',
+                'rg' => 'required',
+            ];
+            $messages = [
+                'required' => 'Campo obrigatório',
+            ];
+            $request->validate($rules, $messages);
+
+        }
+        else {
+
+            $rules = [
+                'titration' => 'required',
+                'cpf' => 'required|unique:profiles',
+                'rg' => 'required|unique:profiles',
+            ];
+            $messages = [
+                'required' => 'Campo obrigatório',
+            ];
+            $request->validate($rules, $messages);
+
+        }
+
 
         Profile::updateOrCreate(
             [
-                'user_id' => $user_id
+                'user_id' => $user_id,
             ],
             [
                 'titration' => $request->input('titration'),
