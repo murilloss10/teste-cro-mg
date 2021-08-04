@@ -18,7 +18,8 @@ class AddressController extends Controller
     public function index()
     {
         
-        $dataAddresses = Address::all();
+        $user_id = Auth::id();
+        $dataAddresses = Address::where('user_id', $user_id)->get();
         return view('address')->with('dataAddresses', $dataAddresses);
 
     }
@@ -68,7 +69,8 @@ class AddressController extends Controller
     public function edit(Address $address)
     {
         
-        $dataAddresses = Address::all();
+        $user_id = Auth::id();
+        $dataAddresses = Address::where('user_id', $user_id)->get();
         return view('forms-edit.address-edit')->with('dataAddress', $address)->with('dataAddresses', $dataAddresses);
 
     }

@@ -68,7 +68,7 @@
         @empty
 
             <tr>
-                <td colspan="14" style="text-align: center;">Sem atividades cadastradas.</td>
+                <td colspan="14" style="text-align: center;">:( Sem filmes adicionados.</td>
             </tr>
 
         @endforelse

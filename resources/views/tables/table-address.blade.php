@@ -73,7 +73,7 @@
         @empty
 
             <tr>
-                <td colspan="14" style="text-align: center;">Sem atividades cadastradas.</td>
+                <td colspan="14" style="text-align: center;">:( Sem endereços adicionados.</td>
             </tr>
 
         @endforelse

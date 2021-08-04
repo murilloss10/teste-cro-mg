@@ -61,7 +61,7 @@ class ProfileController extends Controller
         $user_id = Auth::id();
         $dataUser = User::find($user_id);
         $dataProfiles = Profile::where('user_id', $user_id)->get();
-        return view('personal-data')->with('dataUser', $dataUser)->with('dataProfiles', $dataProfiles);
+        return view('profile')->with('dataUser', $dataUser)->with('dataProfiles', $dataProfiles);
 
     }
 

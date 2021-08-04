@@ -18,7 +18,8 @@ class FilmController extends Controller
     public function index(Request $request)
     {
         
-        $dataFilms = Film::all();
+        $user_id = Auth::id();
+        $dataFilms = Film::where('user_id', $user_id)->get();
         return view('film')->with('dataFilms', $dataFilms);
 
     }
@@ -63,7 +64,8 @@ class FilmController extends Controller
     public function edit(Film $film)
     {
         
-        $dataFilms = Film::all();
+        $user_id = Auth::id();
+        $dataFilms = Film::where('user_id', $user_id)->get();
         return view('forms-edit.film-edit')->with('dataFilm', $film)->with('dataFilms', $dataFilms);
 
     }
