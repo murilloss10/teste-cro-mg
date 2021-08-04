@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\Controller;
 use App\Http\Controllers\AddressController;
 use App\Http\Controllers\FilmController;
 use App\Http\Controllers\ProfileController;
@@ -18,15 +19,12 @@ use App\Http\Controllers\ProfileController;
 */
 
 
-Route::get('/', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::get('/', [Controller::class, 'dashboard'])->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
 
 Route::get('/dados-pessoais', [ProfileController::class, 'edit'])->middleware(['auth'])->name('dados-pessoais');
 Route::post('/dados-pessoais/salvar', [ProfileController::class, 'store'])->middleware(['auth']);
-Route::post('/dados-pessoais/editar/salvar', [ProfileController::class, 'update'])->middleware(['auth']);
 
 Route::get('/enderecos', [AddressController::class, 'index'])->middleware(['auth'])->name('enderecos');
 Route::post('/enderecos/salvar', [AddressController::class, 'store'])->middleware(['auth']);

@@ -13,7 +13,7 @@ class Film extends Model
     public $incrementing = false;
     protected $keyType = 'string';
 
-    protected $fillable = ['id', 'user_id', 'title', 'release_year', 'director'];
+    protected $fillable = ['id', 'user_id', 'title', 'release_year', 'director', 'image_film'];
 
     public function users(){
         return $this->belongsTo(User::class);

@@ -50,6 +50,7 @@ class FilmController extends Controller
             'title' => $request->input('title'),
             'release_year' => $request->input('release_year'),
             'director' => $request->input('director'),
+            'image_film' => 'https://scontent.fmoc6-1.fna.fbcdn.net/v/t1.6435-9/107594426_171946494311021_2464024522398253236_n.jpg?_nc_cat=101&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=mDEmFQmWKtgAX-2CzKO&_nc_ht=scontent.fmoc6-1.fna&oh=3da16961e2172d9367b17fa7305ecaab&oe=612EC86E'
         ]);
 
         return redirect()->action([FilmController::class, 'index']);
@@ -96,6 +97,7 @@ class FilmController extends Controller
             'title' => $request->input('title'),
             'release_year' => $request->input('release_year'),
             'director' => $request->input('director'),
+            'image_film' => 'https://scontent.fmoc6-1.fna.fbcdn.net/v/t1.6435-9/107594426_171946494311021_2464024522398253236_n.jpg?_nc_cat=101&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=mDEmFQmWKtgAX-2CzKO&_nc_ht=scontent.fmoc6-1.fna&oh=3da16961e2172d9367b17fa7305ecaab&oe=612EC86E'
         ));
 
         return redirect()->action([FilmController::class, 'index']);
