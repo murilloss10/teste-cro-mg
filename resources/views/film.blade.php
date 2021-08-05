@@ -17,7 +17,7 @@
                         <div class="mb-3 row">
                             <label for="title" class="col-sm-2 col-form-label">Título</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="title" name="title">
+                                <input type="text" class="form-control" id="title" name="title" value="{{old('title')}}">
                                 @error('title')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
@@ -26,7 +26,7 @@
                         <div class="mb-3 row">
                             <label for="release_year" class="col-sm-2 col-form-label">Ano de Lançamento</label>
                             <div class="col-sm-10">
-                                <input type="number" class="form-control" id="release_year" name="release_year">
+                                <input type="number" class="form-control" id="release_year" name="release_year" value="{{old('release_year')}}">
                                 @error('release_year')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
@@ -35,7 +35,7 @@
                         <div class="mb-3 row">
                             <label for="director" class="col-sm-2 col-form-label">Diretor</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="director" name="director">
+                                <input type="text" class="form-control" id="director" name="director" value="{{old('director')}}">
                                 @error('director')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
