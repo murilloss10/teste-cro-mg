@@ -3,23 +3,29 @@
 
 ## Sobre a aplicação
 
-Projeto em Laravel com a implementação de login por Session do próprio Laravel, CRUD de inserção de dados nas entidades de Cadastro, Endereço e Filmes Favoritos.
+Projeto em Laravel com a implementação de login pelo _Session_ do [Laravel Breeze](https://laravel.com/docs/8.x/starter-kits), CRUD de inserção de dados nas entidades de Cadastro de Usuário, Perfil, Endereço e Filmes Favoritos. As entendades então ficaram definidas da seguinte forma:
 
+- **Cadastro de Usuário:** nome, sobrenome, email, senha;
+- **Perfil de Usuário:** titulação, CPF e RG;
+- **Endereço:** rua, número, complemento, bairro e CEP;
+- **Filmes Favoritos:** título, ano de lançamento e diretor.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+**Observação:** cada usuário tem apenas um perfil e as demais entidades podem ser inseridas indeterminadamente.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Preparação
 
-## Learning Laravel
+Para o desenvolvimento da aplicação usei o servidor do Laragon e gerenciador de banco de dados vindo dentro dele, o HeidiSQL e criei a aplicação dentro do diretório _/laragon/www/_, este específico para a rodagem do servidor.
+Após clonagem do repositório: `https://github.com/murilloss10/teste-cro-mg.git` no seu editor de texto ou IDE, crie um banco de dados e logo após altere o arquivo ` .env ` no diretório raiz:
 
+```
+DB_DATABASE=nome_banco_de_dados
+DB_USERNAME=username_do_banco
+DB_PASSWORD=senha_do_banco_ou_vazio
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+```
+
+Após conferir o nome do banco de dados abra o terminal na pasta do projeto e digite ` php artisan migrate ` para gerar as tabelas definidas nas _migrations_. Concluindo a criação, com o servidor local (no meu caso o Laragon) e banco de dados conectados, basta digitar o comando ` php artisan serve ` para rodar a aplicação em ambiente local.
+
 
 ## Laravel Sponsors
 
@@ -29,19 +35,7 @@ We would like to extend our thanks to the following sponsors for funding Laravel
 
 - **[Vehikl](https://vehikl.com/)**
 - **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
 
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
 ## Code of Conduct
 
