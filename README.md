@@ -31,7 +31,7 @@ Após conferir o nome do banco de dados abra o terminal na pasta do projeto e di
 
 ## Funcionalidades
 
-A aplicação conta com uma responsividade provinda das bibliotecas Bootstrap e dos módulos instalados do [Laravel Breeze](https://laravel.com/docs/8.x/starter-kits), que foram essenciais para páginas que se adequam de acordo com a resolução ou dispositivo, como por exemplo o _mobile_, que ganha um menu totalmente adequado.
+A aplicação conta com uma responsividade provinda das bibliotecas Bootstrap e dos módulos instalados do [Laravel Breeze](https://laravel.com/docs/8.x/starter-kits), que foram essenciais para páginas que se adequam de acordo com a resolução da janela ou dispositivo, como por exemplo o _mobile_, que ganha um menu totalmente adequado.
 
 Dentre as principais funcionalidades desenvolvidas estão:
 
@@ -45,12 +45,14 @@ Uma página inicial para os usuários que dispõe da exibição dos filmes e end
 
 ### Dados Pessoais
 
-Dados Pessoais ou Perfil é a página destinada a 
+Dados Pessoais ou Perfil é a página destinada a inserção de dados pessoais do usuário, mais precisamente o números de Títulação, CPF e RG. Os campos deste dados são formatados e validados para aceitar apenas entradas que satisfaçam as exigências da aplicação.
 
-## Security Vulnerabilities
+### Filmes Favoritos
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Uma página de inserção de filmes favoritos do usuário e que igual a função da página de Dados Pessoais tem campos formatados e validados, mas diferente da mesma, possui uma tabela contendo todas os filmes adicionados pelo o usuário. Esta mesma tabela possui as opções de ` Exibir `, ` Editar ` e ` Excluir `, onde a função ` Exibir ` abre um modal contendo as informações referentes a aquele ` id `, a opção ` Editar ` é responsável por abrir um outro formulário com as informações referentes à aquele ` id ` preenchidas em seus respectivos campos. Já a função ` Excluir ` fica responsável por fazer a remoção de todos os dados do registro selecionado.
 
-## License
+No backend da aplicação um campo é responsável por armazenar um link padrão para abrir as imagens no ` dashboard `.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### Endereços
+
+Assim como a página de Filmes Favoritos, a página de Endereços possui campos formatados e validados, tabela contendo os dados cadastrados, no caso, os endereços cadastrados e as opções de ` Exibir `, ` Editar ` e ` Excluir ` explicadas anteriormente.
