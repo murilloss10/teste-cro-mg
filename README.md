@@ -35,6 +35,14 @@ A aplicação conta com uma responsividade provinda das bibliotecas Bootstrap e 
 
 Dentre as principais funcionalidades desenvolvidas estão:
 
+### Cadastro de Usuário
+
+Função a ser utilizada para o cadastro de novos usuário. Possuindo campos de ` Nome `, ` Sobrenome `, ` Email ` e ` Senha `. Para acessar esta página basta usar a rota ` /registrar `.
+
+### Login de Usuário
+
+Complementando a função de cadastro, o Login serve única e exclusivamente para validar o acesso do usuário, com a solicitação de ` Email ` e ` Senha `, e para acessar basta digitar a rota ` /login `.
+
 ### Menu
 
 O menu é uma funcionalidade presente em todas as páginas, com links para acesso à outras páginas e à opção de Sair da sessão atual.
@@ -43,9 +51,13 @@ O menu é uma funcionalidade presente em todas as páginas, com links para acess
 
 Uma página inicial para os usuários que dispõe da exibição dos filmes e endereços adicionados com link em suas intitulações para as páginas de cadastros das respectivas entidades.
 
+Esta rota é a inicial após a validação do login e para acessá-la basta digitar ` / `.
+
 ### Dados Pessoais
 
 Dados Pessoais ou Perfil é a página destinada a inserção de dados pessoais do usuário, mais precisamente o números de Títulação, CPF e RG. Os campos deste dados são formatados e validados para aceitar apenas entradas que satisfaçam as exigências da aplicação.
+
+A rota desta página foi definida como ` /dados-pessoais `.
 
 ### Filmes Favoritos
 
@@ -53,6 +65,10 @@ Uma página de inserção de filmes favoritos do usuário e que igual a função
 
 No backend da aplicação um campo é responsável por armazenar um link padrão para abrir as imagens no ` dashboard `.
 
+A rota principal dos filmes é a ` /filmes-favoritos `, onde estão listados todos os filmes cadastrados e o formulário para cadastro.
+
 ### Endereços
 
 Assim como a página de Filmes Favoritos, a página de Endereços possui campos formatados e validados, tabela contendo os dados cadastrados, no caso, os endereços cadastrados e as opções de ` Exibir `, ` Editar ` e ` Excluir ` explicadas anteriormente.
+
+Parecida com a rota de filmes, a de endereços também possui uma principal onde é listado todos os endereços cadastrados e o formulário para cadastro. A rota é a ` /enderecos `.
