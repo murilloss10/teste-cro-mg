@@ -5,7 +5,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Str;
 
-class CreatePersonalDataTable extends Migration
+class CreateProfilesTable extends Migration
 {
     /**
      * Run the migrations.
